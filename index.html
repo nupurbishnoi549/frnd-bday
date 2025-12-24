@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Riya Motu Don Birthday 🎂</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            padding: 30px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            background: #ff6f91;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff4f7b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" id="game"></div>
+
+    <script>
+        let step = 0;
+
+        const screens = [
+            {
+                text: "👀 Ohhh… who is this smart girl?<br><br>🎅 Ohhh YESSS!!!<br>It’s our BEST Santa gift ever 🎄✨<br><br><b>RIYA MOTU DON 💖</b><br><br>Ready for your Birthday Hunt? 😎",
+                buttons: ["Start 🎉"]
+            },
+            {
+                text: "🎂 How old is our Motu Don today?",
+                buttons: ["18", "19", "20 😎"]
+            },
+            {
+                text: "👉 Who loves you the MOST in this whole universe?",
+                buttons: ["Mummy", "Papa", "Dadi", "Seema", "Yashu"]
+            },
+            {
+                text: "😂 What describes Riya Motu Don the BEST?",
+                buttons: ["Cute", "Funny", "Emotional", "All of the above 😜"]
+            },
+            {
+                text: "🦸‍♀️ What is Riya’s hidden superpower?",
+                buttons: ["Making people laugh", "Crying without reason", "Stealing hearts", "All together 😏"]
+            },
+            {
+                text: "💖 What makes Riya special to me?",
+                buttons: ["She listens", "She supports", "She annoys", "All & still loved 😌"]
+            },
+            {
+                text: "🌸 If Riya is sad, what should she remember?",
+                buttons: ["She is strong", "She is loved", "She is never alone", "All of the above 💖"]
+            },
+            {
+                text: "🎉🎂 HAPPY 20th BIRTHDAY RIYA MOTU DON 🎂🎉<br><br>You are funny, emotional, annoying & perfect ❤️<br><br>Always remember — I’m with you 💖<br><br><b>— Tamanna Bishnoi</b>",
+                buttons: []
+            }
+        ];
+
+        function showScreen() {
+            const game = document.getElementById("game");
+            let html = `<p>${screens[step].text}</p>`;
+            screens[step].buttons.forEach(btn => {
+                html += `<button onclick="next('${btn}')">${btn}</button>`;
+            });
+            game.innerHTML = html;
+        }
+
+        function next(answer) {
+            if (step === 2) {
+                alert("❌ WRONG 😏\n✔️ It’s ME dude — TAMANNA BISHNOI ❤️");
+            }
+            step++;
+            showScreen();
+        }
+
+        showScreen();
+    </script>
+
+</body>
+
+</html>
